@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PasswordGenerator.MainPage"
+             BackgroundColor="#131313"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label Text="Password Generator"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#D9D9D9"
+                   FontSize="32"/>
+
+            <Entry BackgroundColor="#D9D9D9" IsReadOnly="True" x:Name="EtPassword"/>
+
+            <Button Text="COPY PASSWORD" x:Name="BtCopy" Clicked="BtCopy_Clicked" IsEnabled="False"/>
+
+            <VerticalStackLayout HorizontalOptions="Center" Margin="0">
+                <Slider Minimum="1" Maximum="32" x:Name="SldLength" Value="16" ValueChanged="SldLength_ValueChanged"/>
+                <Label Text="THE LENGTH IS: 16" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" x:Name="LbLength"/>
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="-20">
+                <CheckBox x:Name="CbCapital" IsChecked="True"/>
+                <Label Text="HAS CAPITAL LETTERS" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="-20">
+                <CheckBox x:Name="CbSmall"/>
+                <Label Text="HAS SMALL LETTERS" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="-20">
+                <CheckBox x:Name="CbNumbers"/>
+                <Label Text="HAS NUMBERS" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="-20">
+                <CheckBox x:Name="CbSpecial"/>
+                <Label Text="HAS SPECIAL CHARACTERS" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
+            </HorizontalStackLayout>
+
+            <Button Text="GENERATE PASSWORD" x:Name="BtGen" Clicked="BtGen_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+
